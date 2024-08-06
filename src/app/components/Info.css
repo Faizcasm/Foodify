@@ -1,0 +1,23 @@
+/* Info.css */
+
+.info-section-wrapper {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .info-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .info-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
