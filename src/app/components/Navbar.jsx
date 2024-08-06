@@ -14,22 +14,17 @@ const Navbar = () => {
   const cartcontexts =useContext(CartContext)
   const {cart} = cartcontexts
   if (!context||!cartcontexts) {
-    return null; // Ensure the context is provided
+    return <h1>Context is not available</h1>; 
   }
-
   const { user, loading, isLoggedIn, setLoading } = context;
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
   const handleSignInClick = () => {
     if (user) {
-      setLoading(true);
       router.push(`/pages/profile/${user._id}`);
-      setLoading(false);
     } else {
-      setLoading(true)
       router.push(`/pages/login`);
-      setLoading(false);
     }
   };
 function homes(){
