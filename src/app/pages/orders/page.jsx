@@ -43,7 +43,7 @@ const OrdersPage = () => {
     useEffect(() => {
       getOrders()
       getAddress()
-    }, [])
+    })
     if(loading){
       return <Loading/>
     }
