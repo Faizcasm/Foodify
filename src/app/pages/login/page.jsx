@@ -82,14 +82,16 @@ const {setUser,user,isLoggedIn,setIsLoggedIn,setLoading,loading} =context
   const handleSubmit=(e)=>{
     e.preventDefault();
     setLoading(true)
-    axios.post(`/api/users/login',{email,password}`,{withCredentials:true})
+    axios.post(`/api/users/login',{email,password}`)
     .then(res=>{
       console.log(res);
+      toast.success(res.data) 
       setUser(true)
       setIsLoggedIn(true)
       toast.success("Login success")
         router.push('/');
         setLoading(false)
+      location.reload() 
     })
     .catch(err=>{
       setLoading(true)
