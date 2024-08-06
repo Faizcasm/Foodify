@@ -2,10 +2,10 @@
 
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import InfoSection from '../components/InfoSection';
-import Footer from '../components/Footer';
+import Navbar from '@/app/components/Navbar';
+import Hero from '@/app/components/Hero';
+import InfoSection from '@/app/components/InfoSection';
+import Footer from '@/app/components/Footer';
 import { motion } from 'framer-motion';
 
 export default function Home() {
