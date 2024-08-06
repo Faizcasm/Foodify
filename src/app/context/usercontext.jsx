@@ -17,7 +17,7 @@ export const UserProvider = ({ children }) => {
   const [data,setData] =useState([])
   const fetchUser = async () => {
     try {
-      const response = await axios.get(`/api/users/dash`);
+      const response = await axios.get(`${process.env.DOMAIN}/api/users/dash`);
       console.log(response.data.data);
       setUser(response.data.data);
       setIsLoggedIn(true)
