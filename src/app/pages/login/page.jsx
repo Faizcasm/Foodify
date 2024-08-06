@@ -82,7 +82,7 @@ const {setUser,user,isLoggedIn,setIsLoggedIn,setLoading,loading} =context
   const handleSubmit=(e)=>{
     e.preventDefault();
     setLoading(true)
-    axios.post(`${process.env.DOMAIN}/api/users/login',{email,password}`,{withCredentials:true})
+    axios.post(`/api/users/login',{email,password}`,{withCredentials:true})
     .then(res=>{
       console.log(res);
       setUser(true)
