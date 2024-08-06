@@ -17,7 +17,7 @@ const OrdersPage = () => {
     const {setLoading,loading} =useContext(UserContext)
     const getOrders = async()=>{
       setLoading(true)
-        await axios.get('/api/foods/getorders')
+        await axios.get(`${process.env.DOMAIN}/api/foods/getorders`)
         .then(res=>{
             setOrders(res.data.data)
             setLoading(false)
@@ -29,7 +29,7 @@ const OrdersPage = () => {
     }
     const getAddress = () => {
       setLoading(true)
-      axios.get('/api/users/getaddress')
+      axios.get(`${process.env.DOMAIN}/api/users/getaddress`)
           .then(res => {
               console.log(res.data);
               setAddress(res.data.data);

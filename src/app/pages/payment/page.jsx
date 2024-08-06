@@ -115,13 +115,13 @@ const router =useRouter()
     }
 
     try {
-      await axios.post('/api/foods/payment', { items:cart })
+      await axios.post(`${process.env.DOMAIN}/api/foods/payment`, { items:cart })
     .then(res=>{
       console.log(res);
       toast.success("Payment success")
       router.push('/')
       setPaying(false)
-      axios.post(`/api/foods/orders`,{cart},{withCredentials:true})
+      axios.post(`${process.env.DOMAIN}/api/foods/orders`,{cart},{withCredentials:true})
       .then(res=>{
           router.push('/pages/orders')
           toast.success('Order Placed')

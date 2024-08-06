@@ -655,7 +655,7 @@ const ProfilePage = ({ params }) => {
   const handleConfirmDelete = () => {
     setShowModel(false);
     setLoading(true);
-    axios.delete('/api/users/deleteuser')
+    axios.delete(`${process.env.DOMAIN}/api/users/deleteuser`)
       .then(res => {
         console.log(res);
         toast.success("User deleted successfully");
@@ -673,7 +673,7 @@ const ProfilePage = ({ params }) => {
 
   const handleLogout = () => {
     setLoading(true);
-    axios.post('/api/users/logout')
+    axios.post(`${process.env.DOMAIN}/api/users/logout`)
       .then(res => {
         console.log(res);
         router.push('/pages/home');
@@ -710,7 +710,7 @@ const ProfilePage = ({ params }) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await axios.post('/api/users/updateprofile', { newUsername, newEmail, newProfile });
+      const response = await axios.post(`${process.env.DOMAIN}/api/users/updateprofile`, { newUsername, newEmail, newProfile });
       console.log(response);
       toast.success("Profile updated successfully");
       router.push('/');

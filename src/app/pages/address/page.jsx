@@ -46,7 +46,7 @@ function Page() {
     const {loading,setLoading} =useContext(UserContext)
     const getAddress = () => {
         setLoading(true)
-        axios.get('/api/users/getaddress')
+        axios.get(`${process.env.DOMAIN}/api/users/getaddress`)
             .then(res => {
                 console.log(res.data);
                 setAddress(res.data.data);

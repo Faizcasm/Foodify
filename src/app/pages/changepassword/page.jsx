@@ -88,7 +88,7 @@ const ChangePassword = () => {
       setLoading(false)
       return;
     }
-    axios.post('/api/users/updatepassword',{currentpassword,newpassword})
+    axios.post(`${process.env.DOMAIN}/api/users/updatepassword`,{currentpassword,newpassword})
     .then(res=>{
       console.log(res);
       toast.success("Password updated")

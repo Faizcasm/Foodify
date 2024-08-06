@@ -154,7 +154,7 @@ const router = useRouter()
         console.log(item);
         return;
       }
-      await axios.delete(`/api/foods/removefood/${item._id}`, { withCredentials: true });
+      await axios.delete(`${process.env.DOMAIN}/api/foods/removefood/${item._id}`, { withCredentials: true });
       removeFromCart(item);
     } catch (error) {
       console.error('Error removing food:', error);

@@ -102,7 +102,7 @@ const SignupPage = () => {
 
       setLoading(true);
 
-      await axios.post('/api/users/signup', {username,email,password});
+      await axios.post(`${process.env.DOMAIN}/api/users/signup`, {username,email,password});
 
       router.push('/pages/verifyemail');
       setLoading(false);
