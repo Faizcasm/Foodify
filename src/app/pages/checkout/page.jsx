@@ -90,7 +90,7 @@ const router =useRouter()
   const handleSubmit = (e) => {
     setProcess(true)
     e.preventDefault();
-    axios.post(`${process.env.DOMAIN}/api/users/address`, { city, street, state,phone,pincode ,name})
+    axios.post(`/api/users/address`, { city, street, state,phone,pincode ,name})
       .then(res => {
         router.push('/pages/payment')
         setProcess(false)

@@ -66,7 +66,7 @@ const {loading,setLoading} =context
   const handleSubmit =(e)=>{
     setLoading(true)
     e.preventDefault();
-    axios.post(`${process.env.DOMAIN}/api/users/forgotpass`,{email})
+    axios.post(`/api/users/forgotpass`,{email})
     .then(res=>{
       console.log(res);
       router.push('/pages/resetpassword')

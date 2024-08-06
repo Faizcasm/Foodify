@@ -73,7 +73,7 @@ const {loading,setLoading} =context
       setLoading(false)
       return;
     }
-    axios.post(`${process.env.DOMAIN}/api/users/resetpass`,{otp,newpassword})
+    axios.post(`/api/users/resetpass`,{otp,newpassword})
     .then(res=>{
       console.log(res);
       toast.success("Password changed")

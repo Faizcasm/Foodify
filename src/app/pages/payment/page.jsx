@@ -115,7 +115,7 @@ const router =useRouter()
     }
 
     try {
-      await axios.post(`${process.env.DOMAIN}/api/foods/payment`, { items:cart })
+      await axios.post(`/api/foods/payment`, { items:cart })
     .then(res=>{
       console.log(res);
       toast.success("Payment success")

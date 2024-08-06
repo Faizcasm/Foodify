@@ -120,7 +120,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     setProcessing(true)
     e.preventDefault();
-    axios.post(`${process.env.DOMAIN}/api/users/contact`,{name,email,message})
+    axios.post(`/api/users/contact`,{name,email,message})
     .then(res=>{
       console.log(res);
       toast.success("Message sended")

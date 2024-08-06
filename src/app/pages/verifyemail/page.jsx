@@ -80,7 +80,7 @@ const handleSubmit =  (e) => {
   e.preventDefault();
   try {
     setLoading(true)
-    const res =axios.post(`${process.env.DOMAIN}/api/users/verifyemail`, { otp: otp.join('') });
+    const res =axios.post(`/api/users/verifyemail`, { otp: otp.join('') });
     console.log(res);
     toast.success("Email Verified");
     router.push('/pages/login');

@@ -60,7 +60,7 @@ const CartProvider = ({ children }) => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await axios.get(`${process.env.DOMAIN}/api/foods/getcart`, { withCredentials: true });
+        const response = await axios.get(`/api/foods/getcart`, { withCredentials: true });
         dispatch({ type: 'SET_CART', payload: response.data.data });
       } catch (error) {
         console.error('Error fetching cart data:', error);
@@ -72,7 +72,7 @@ const CartProvider = ({ children }) => {
 
   const addToCart = async(item) => {
     try {
-     const response=await axios.post(`${process.env.DOMAIN}/api/foods/addtocart`, {item}, { withCredentials: true });
+     const response=await axios.post(`/api/foods/addtocart`, {item}, { withCredentials: true });
      console.log(response.data);
         toast.success("Item added")
         dispatch({ type: 'ADD_TO_CART', payload: item });  
@@ -86,7 +86,7 @@ const CartProvider = ({ children }) => {
 
   const removeFromCart = async (item) => {
     try {
-       await axios.delete(`${process.env.DOMAIN}/api/foods/removefood/${item._id}`, { withCredentials: true });
+       await axios.delete(`/api/foods/removefood/${item._id}`, { withCredentials: true });
       toast.success("Item removed")
       dispatch({ type: 'REMOVE_FROM_CART', payload: item });
       
