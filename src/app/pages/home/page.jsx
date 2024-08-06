@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/app/components/Navbar';
 import Hero from '@/app/components/Hero';
-import InfoSection from '@/app/components/InfoSection';
+import InfoSection from '@/app/components/Infosectionn';
 import Footer from '@/app/components/Footer';
 import { motion } from 'framer-motion';
 
