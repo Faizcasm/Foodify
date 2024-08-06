@@ -90,7 +90,6 @@ const {setUser,user,isLoggedIn,setIsLoggedIn,setLoading,loading} =context
       toast.success("Login success")
         router.push('/');
         setLoading(false)
-      window.location.reload()
     })
     .catch(err=>{
       setLoading(true)
