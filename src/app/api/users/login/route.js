@@ -19,7 +19,7 @@ try {
     if(!isPasswordMatch){
         return NextResponse.json({message:"Incorrect password"},{status:400})
     }
-    const isVerified = await user.isVerified
+    const isVerified = await user.isVerified;
     if(!isVerified){
         return NextResponse.json({message:"Please verify your email"},{status:400})
     }
