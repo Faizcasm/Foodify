@@ -87,7 +87,7 @@ const ProfilePage = ({ params }) => {
         setProfileImage(reader.result);
         setSelectedImage(reader.result);
         setIsPreviewOpen(true);
-        toast.success("Now click on cross to save changes");
+        toast.success("Now save changes");
       };
       reader.readAsDataURL(file);
     }
@@ -209,7 +209,7 @@ const ProfilePage = ({ params }) => {
           type="file"
           accept="image/*"
           onChange={handleImageUpload}
-          defaultValue={user.profile}
+          defaultValue={user ? user.profile:newProfile}
         />
       </div>
 
