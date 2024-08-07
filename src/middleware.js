@@ -25,7 +25,7 @@ export const config = {
     '/pages/verifyemail',
     '/pages/resetpassword',
     '/pages/forgotpassword',
-    '/pages/profile',
+    '/pages/profile/[id]',
     '/pages/changepassword',
     '/pages/menu',
     '/pages/cart',
