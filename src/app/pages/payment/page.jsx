@@ -223,11 +223,15 @@ const PaymentPage = () => {
           toast.success("Payment success");
           router.push('/');
           setPaying(false);
-          axios.post(`/api/foods/orders`, { cart }, { withCredentials: true })
+          axios.post(`/api/foods/orders`, { cart })
             .then(res => {
               router.push('/');
               toast.success('Order Placed');
-            });
+            })
+         .catch(err=>{
+          toast.error("Order failed")
+          setPaying(false)
+         }
         })
         .catch(err => {
           toast.error("Payment failed");
