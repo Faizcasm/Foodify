@@ -16,7 +16,7 @@ export async function DELETE(request){
         }
         const deletion = await User.deleteOne(user)
         const response = NextResponse.json({message:"Account deleted",data:deletion,success:true},{status:200})
-        response.cookies.set('token',"",{httpOnly:true,secure:true})
+        response.cookies.set('token',"",{httpOnly:true,secure:true,sameSite:"None"})
         return response
     } catch (error) {
         return NextResponse.json({error:error.message},{status:500})
