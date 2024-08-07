@@ -29,7 +29,6 @@ const LoginPage = () => {
         setIsLoggedIn(true);
         toast.success("Login success");
         router.push('/')
-        location.reload();
       })
       .catch(err => {
         console.log(err);
