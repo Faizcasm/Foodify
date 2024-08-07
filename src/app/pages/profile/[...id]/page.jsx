@@ -209,6 +209,7 @@ const ProfilePage = ({ params }) => {
           type="file"
           accept="image/*"
           onChange={handleImageUpload}
+          defaultValue={user.profile}
         />
       </div>
 
