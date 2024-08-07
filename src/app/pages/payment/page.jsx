@@ -51,9 +51,9 @@ const PaymentPage = () => {
  const handleorders=async()=>{
  await axios.post('/api/foods/orders', { cart })
             .then(res => {
-              router.push('/pages/menu');
               toast.success('Order Placed');
              location.reload()
+              router.push('/');
             })
          .catch(err=>{
        toast.error(err.response.data.message)
