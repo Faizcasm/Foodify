@@ -133,7 +133,7 @@ margin-top:100px;
 
 `;
 const Button =styled.button`
-width:10%;
+width:50%;
 height:40px;
 cursor:pointer;
 background-color:#ffffff;
