@@ -228,13 +228,9 @@ const PaymentPage = () => {
               router.push('/');
               toast.success('Order Placed');
             })
-         .catch(err=>{
-          toast.error("Order failed")
-          setPaying(false)
-         }
         })
         .catch(err => {
-          toast.error("Payment failed");
+          toast.error(err.response.data.message);
           setPaying(false);
         });
     } catch (error) {
