@@ -1,1 +1,138 @@
 
+/* Container */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  color: #ffffff;
+}
+
+/* Form Container */
+.form-container {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Label */
+.label {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Input */
+.input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Textarea */
+.textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+/* Input Focus */
+.input:focus,
+.textarea:focus {
+  border-color: #27ae60;
+  outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 0.8rem;
+  border: none;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Submit Button Hover */
+.submit-btn:hover {
+  background-color: #333333;
+}
+
+/* Info */
+.info {
+  flex: 1;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+/* Info Title */
+.info-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+/* Info Text */
+.info-text {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #ffffff;
+}
+
+/* Contact Item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+}
+
+/* Contact Icon */
+.contact-icon {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+/* Contact Text */
+.contact-text {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
