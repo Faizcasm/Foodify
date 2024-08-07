@@ -25,7 +25,7 @@ const LoginPage = () => {
       .then(res => {
         console.log(res);
         toast.success(res.data);
-        setUser(true);
+        setUser(res.data)
         setIsLoggedIn(true);
         toast.success("Login success");
         router.push('/')
