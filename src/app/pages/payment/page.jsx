@@ -223,7 +223,8 @@ const PaymentPage = () => {
           toast.success("Payment success");
           router.push('/');
           setPaying(false);
-          axios.post(`/api/foods/orders`, { cart })
+         if(res.status===200){
+           axios.post('/api/foods/orders', { cart })
             .then(res => {
               router.push('/pages/menu');
               toast.success('Order Placed');
@@ -231,6 +232,7 @@ const PaymentPage = () => {
          .catch(err=>{
        toast.error(err.response.data.message)
       })
+         }
         })
         .catch(err => {
           toast.error(err.response.data.message);
