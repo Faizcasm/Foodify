@@ -81,11 +81,11 @@ function Page() {
                         <AddressDetail><strong>Phone:</strong> {item.phone}</AddressDetail>
                         <AddressDetail><strong>Pincode:</strong> {item.pincode}</AddressDetail>
                         <AddressDetail><strong>State:</strong> {item.state}</AddressDetail>
-{/*                         <Title><strong>Developer Address</strong></Title>
+                        <Title><strong>Developer Address</strong></Title>
                         <div className='google-map'>         
 <iframe src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26410.60651366149!2d74.53592734559861!3d34.16358663968073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e1a1e4ec52b755%3A0xa5ed223653817012!2spattan%20193121!5e0!3m2!1sen!2sin!4v1722934560508!5m2!1sen!2sin`} 
 width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
-</div> */}
+</div>
                     </AddressCard>
                 ))
             ) : (
