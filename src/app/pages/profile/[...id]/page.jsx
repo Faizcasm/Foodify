@@ -426,7 +426,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { UserContext } from '@/app/context/usercontext';
-import { FaBox, FaHouse, FaLock, FaCross, FaDeleteLeft } from 'react-icons/fa';
+// import { FaBox, FaHouse, FaLock, FaCross, FaDeleteLeft } from 'react-icons/fa';
 import Model from '@/app/components/Modal';
 import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/Footer';
@@ -777,11 +777,11 @@ const ProfilePage = ({ params }) => {
             <SectionHeader>Track</SectionHeader>
             <ActivitiesList>
               <Activity onClick={ordersHandle}>
-                <ActivityIcon><FaBox /></ActivityIcon>
+{/*                 <ActivityIcon><FaBox /></ActivityIcon> */}
                 Orders
               </Activity>
               <Activity onClick={addressHandle}>
-                <ActivityIcon><FaHouse /></ActivityIcon>
+{/*                 <ActivityIcon><FaHouse /></ActivityIcon> */}
                 Address
               </Activity>
             </ActivitiesList>
@@ -791,15 +791,15 @@ const ProfilePage = ({ params }) => {
             <SectionHeader>Settings</SectionHeader>
             <SettingsList>
               <SettingItem onClick={handleChangePassword}>
-                <SettingIcon><FaLock /></SettingIcon>
+{/*                 <SettingIcon><FaLock /></SettingIcon> */}
                 Change Password
               </SettingItem>
               <SettingItem onClick={handleDeleteAccount}>
-                <SettingIcon><FaCross /></SettingIcon>
+{/*                 <SettingIcon><FaCross /></SettingIcon> */}
                 Delete Account
               </SettingItem>
               <SettingItem onClick={handleLogout}>
-                <SettingIcon><FaSignOutAlt /></SettingIcon>
+{/*                 <SettingIcon><FaSignOutAlt /></SettingIcon> */}
                 Logout
               </SettingItem>
             </SettingsList>
