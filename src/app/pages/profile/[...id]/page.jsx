@@ -426,7 +426,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { UserContext } from '@/app/context/usercontext';
-import { FaBox, FaHouse, FaLock, FaSignOutAlt, FaDeleteLeft } from 'react-icons/fa';
+import { FaBox, FaHouse, FaLock, FaCross, FaDeleteLeft } from 'react-icons/fa';
 import Model from '@/app/components/Modal';
 import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/Footer';
@@ -795,7 +795,7 @@ const ProfilePage = ({ params }) => {
                 Change Password
               </SettingItem>
               <SettingItem onClick={handleDeleteAccount}>
-                <SettingIcon><FaDeleteLeft /></SettingIcon>
+                <SettingIcon><FaCross /></SettingIcon>
                 Delete Account
               </SettingItem>
               <SettingItem onClick={handleLogout}>
