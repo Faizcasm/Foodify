@@ -223,16 +223,6 @@ const PaymentPage = () => {
           toast.success("Payment success");
           router.push('/');
           setPaying(false);
-         if(res.status===200){
-           axios.post('/api/foods/orders', { cart })
-            .then(res => {
-              router.push('/pages/menu');
-              toast.success('Order Placed');
-            })
-         .catch(err=>{
-       toast.error(err.response.data.message)
-      })
-         }
         })
         .catch(err => {
           toast.error(err.response.data.message);
@@ -246,7 +236,16 @@ const PaymentPage = () => {
   const calculateTotal = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   };
-
+ const handleorders=async()=>{
+ await axios.post('/api/foods/orders', { cart })
+            .then(res => {
+              router.push('/pages/menu');
+              toast.success('Order Placed');
+            })
+         .catch(err=>{
+       toast.error(err.response.data.message)
+      })
+ }
   return (
     <>
       <Navbar /><br /><br />
@@ -277,7 +276,7 @@ const PaymentPage = () => {
               <hr />
               <p className="cardnumber">Use test card number <br />4242 4242 4242 4242</p>
             </div>
-            <button className="buttonpay" type="submit">{paying ? "Paying..." : "Pay"}</button>
+            <button className="buttonpay" onClick={handleorders} type="submit">{paying ? "Paying..." : "Pay"}</button>
           </form>
         </div>
       </div>
