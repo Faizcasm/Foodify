@@ -41,7 +41,6 @@ const MenuPage = () => {
       <br />
       <br />
       <div className="container">
-        <header className="header">Explore Menu</header>
         <input
           type="text"
           placeholder='🔍Search for a food item... '
