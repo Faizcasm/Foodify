@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { assets, food_list } from '@/app/assets/assets';
+import { assets, food_list } from '@/assets/assets';
 import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/Footer';
 import { UserContext } from '@/app/context/usercontext';
