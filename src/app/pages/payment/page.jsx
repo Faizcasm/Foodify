@@ -52,7 +52,6 @@ const PaymentPage = () => {
  await axios.post('/api/foods/orders', { cart })
             .then(res => {
               toast.success('Order Placed');
-             location.reload()
               router.push('/');
             })
          .catch(err=>{
