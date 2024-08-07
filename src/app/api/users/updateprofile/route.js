@@ -10,18 +10,18 @@ export async function POST(request){
 try {
     const token = request.cookies.get('token')?.value || ""
     const reqBody = await request.json()
-    const {newemail,newusername,newprofile} =reqBody
+    const {newEmail,newUsername,newProfile} =reqBody
     const verifyToken = jwt.verify(token,process.env.JWT_SECRET)
     const userId = verifyToken.id
     const user = await User.findOne({_id:userId})
     if(!user){
         return NextResponse.json({message:"user does not exist"},{status:400})
     }
-    let newusernames = newusername || user.username
-    let newemails = newemail || user.email
+    let newusernames = newUsername || user.username
+    let newemails = newEmail || user.email
     user.username=newusernames
     user.email=newemails
-    user.profile=newprofile || user.profile
+    user.profile=newProfile || user.profile
     await user.save()
     console.log(user);
     return NextResponse.json({message:"Profile Updated",data:user},{status:200})
