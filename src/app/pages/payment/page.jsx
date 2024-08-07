@@ -223,9 +223,9 @@ const PaymentPage = () => {
           toast.success("Payment success");
           router.push('/');
           setPaying(false);
-          axios.post(`${process.env.DOMAIN}/api/foods/orders`, { cart }, { withCredentials: true })
+          axios.post(`/api/foods/orders`, { cart }, { withCredentials: true })
             .then(res => {
-              router.push('/pages/orders');
+              router.push('/');
               toast.success('Order Placed');
             });
         })
