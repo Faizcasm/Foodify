@@ -225,9 +225,12 @@ const PaymentPage = () => {
           setPaying(false);
           axios.post(`/api/foods/orders`, { cart })
             .then(res => {
-              router.push('/');
+              router.push('/pages/menu');
               toast.success('Order Placed');
             })
+         .catch(err=>{
+       toast.error(err.response.data.message)
+      })
         })
         .catch(err => {
           toast.error(err.response.data.message);
