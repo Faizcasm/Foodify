@@ -28,7 +28,7 @@ const LoginPage = () => {
         setUser(res.data)
         setIsLoggedIn(true);
         toast.success("Login success");
-        router.push('/')
+        router.push('/pages/menu')
       })
       .catch(err => {
         console.log(err);
