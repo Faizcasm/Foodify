@@ -102,6 +102,7 @@ const ProfilePage = ({ params }) => {
       toast.success("Profile updated successfully");
       router.push('/');
       setLoading(false);
+      location.reload()
     } catch (error) {
       console.log(error);
       toast.error("Profile update error");
