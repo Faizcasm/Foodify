@@ -60,7 +60,7 @@ const MenuPage = () => {
                 <h3 className="card-title">{item.name}</h3>
                 <p className="card-description">{item.description}</p>
                 <p className="card-price">${item.price}</p>
-                <button onClick={() => addToCart(item)} className="button">
+                <button onClick={() => addToCart(item)} className="buttoned">
                   Add to bag
                 </button>
               </div>
