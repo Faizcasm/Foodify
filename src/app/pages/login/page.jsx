@@ -17,25 +17,47 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const context = useContext(UserContext);
   const { setUser, setIsLoggedIn, setLoading, loading } = context;
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  try {
+    const res = await axios.post('/api/users/login', { email, password });
+    console.log('Login Response:', res);
+    if (res.data && typeof res.data.message === 'string') {
+      toast.success(res.data.message);
+    } else {
+      toast.error('Unexpected response format');
+    }
+    setUser(res.data.user); // Adjust based on your API response structure
+    setIsLoggedIn(true);
+    router.push('/');
+  } catch (err) {
+    console.error('Login Error:', err);
+    toast.error(err.response?.data?.message || 'Login failed');
+  } finally {
+    setLoading(false);
+  }
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    axios.post('/api/users/login', { email, password })
-      .then(res => {
-        console.log(res);
-        toast.success(res.data);
-        setUser(res.data)
-        setIsLoggedIn(true);
-        toast.success("Login success");
-        router.push('/pages/menu')
-      })
-      .catch(err => {
-        console.log(err);
-        toast.error(err.response.data.message);
-        setLoading(false);
-      });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   axios.post('/api/users/login', { email, password })
+  //     .then(res => {
+  //       console.log(res);
+  //       toast.success(res.data);
+  //       setUser(res.data)
+  //       setIsLoggedIn(true);
+  //       toast.success("Login success");
+  //       router.push('/pages/menu')
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //       toast.error(err.response.data.message);
+  //       setLoading(false);
+  //     });
+  // };
 
   if (loading) {
     return <Loading />;
