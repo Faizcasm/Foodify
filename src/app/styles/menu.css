@@ -5,7 +5,8 @@
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    background-color: #333333;
+    background-image:url("@/app/assets/Dark.jpg");
+    background-size:100% 100%;
   }
   
   .header {
