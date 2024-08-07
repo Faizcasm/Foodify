@@ -4,13 +4,12 @@
 import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { UserContext } from '../context/usercontext';
-import './Hero.css'
+import { UserContext } from '@/app/context/usercontext';
+import '@/app/components/Hero.css'
 
 const Hero = () => {
   const router = useRouter();
   const context = useContext(UserContext);
-  if(!context) return null;
   const { user, isLoggedIn } = context;
 
   function handleMenu() {
