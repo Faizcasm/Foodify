@@ -62,7 +62,7 @@ function Page() {
 
     useEffect(() => {
         getAddress();
-    });
+    },[]);
     if(loading){
         return <Loading/>
     }
