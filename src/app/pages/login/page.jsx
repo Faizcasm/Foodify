@@ -29,7 +29,7 @@ const handleSubmit = async (e) => {
     } else {
       toast.error('Unexpected response format');
     }
-    if(res.data.user.email==process.env.ADMIN_EMAIL && res.data.user.password==process.env.ADMIN_NAME){
+    if(email==process.env.ADMIN_EMAIL && password==process.env.ADMIN_NAME){
       toast.success("Admin Verified")
       router.push('/pages/admin')
       setUser(res.data.user)
