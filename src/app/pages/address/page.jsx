@@ -66,7 +66,7 @@ function Page() {
     if(loading){
         return <Loading/>
     }
-  if(address=="") return <><Navbar/><br/><br/><br/><AddressCard><AddressDetail>No Addresses Found</AddressDetail></AddressCard><br/><Footer/></>
+  if(address=="") return <><Navbar/><br/><br/><Container><AddressCard><AddressDetail>No Addresses Found</AddressDetail></AddressCard></Container><br/><Footer/></>
     return (
         <>
         <Navbar/>
