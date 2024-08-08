@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import InfoSection from "./components/Infosectionn";
 import Footer from "./components/Footer";
 import Head from "next/head";
+import {motion} from 'framer-motion';
 import './styles/home.css';
 export default function Home() {
   return (
