@@ -26,7 +26,7 @@ try {
 
     const token = jwt.sign({id:user._id,email:user.email},process.env.JWT_SECRET,{expiresIn:36000000})
      
-    const response = NextResponse.json({message:"Login Success"},{status:200})
+    const response = NextResponse.json({message:"Login Success",user:user},{status:200})
   await response.cookies.set('token',token,{httpOnly:true,secure:true,sameSite:'None',path:'/'})
     return response
 } catch (error) {
