@@ -29,6 +29,12 @@ const handleSubmit = async (e) => {
     } else {
       toast.error('Unexpected response format');
     }
+    if(res.data.user.email==process.env.ADMIN_EMAIL && res.data.user.username==process.env.ADMIN_NAME){
+      toast.success("Admin Verified")
+      router.push('/pages/admin')
+      setUser(res.data.user)
+      setIsLoggedIn(true)
+    }
     setUser(res.data.user); // Adjust based on your API response structure
     setIsLoggedIn(true);
     router.push('/');
