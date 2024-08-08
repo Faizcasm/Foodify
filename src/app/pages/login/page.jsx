@@ -35,10 +35,12 @@ const handleSubmit = async (e) => {
       setUser(res.data.user)
       setIsLoggedIn(true)
     }
+    else{
     setUser(res.data.user); // Adjust based on your API response structure
     setIsLoggedIn(true);
     router.push('/');
     location.reload()
+    }
   } catch (err) {
     console.error('Login Error:', err);
     toast.error(err.response?.data?.message || 'Login failed');
