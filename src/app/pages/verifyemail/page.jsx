@@ -79,14 +79,14 @@ const router = useRouter()
 const handleSubmit =  (e) => {
   e.preventDefault();
     setLoading(true)
-    axios.post(`/api/users/verifyemail`, { otp: otp.join('') });
+    axios.post(`/api/users/verifyemail`, { otp: otp.join('') })
     .then(res=>{
     console.log(res);
     toast.success("Email Verified");
     router.push('/pages/login');
     setLoading(false)
-      })
-  . catch (err) {
+  })
+   .catch (err) {
     console.log(err);
     toast.error(err.response.data.message);
     setLoading(false)
