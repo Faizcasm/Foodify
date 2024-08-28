@@ -108,6 +108,7 @@ if(loading){
                 maxLength="1"
                 key={index}
                 value={data}
+                required
                 onChange={(e) => handleChange(e.target, index)}
                 onFocus={(e) => e.target.select()}
               />
