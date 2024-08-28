@@ -62,24 +62,14 @@ const Button = styled.button`
 `;
 
 const VerifyEmailPage = () => {
-  const [otp, setOtp] = useState(new Array(6).fill(''));
+  const [otp, setOtp] = useState('');
  const context = useContext(UserContext)
  const {loading,setLoading} =context
-  const handleChange = (element, index) => {
-    if (isNaN(element.value)) return false;
-
-    setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
-
-    // Focus on next input
-    if (element.nextSibling) {
-      element.nextSibling.focus();
-    }
-  };
 const router = useRouter()
 const handleSubmit =  (e) => {
   e.preventDefault();
     setLoading(true)
-    axios.post(`/api/users/verifyemail`, { otp: otp.join('') })
+    axios.post(`/api/users/verifyemail`, {otp})
     .then(res=>{
     console.log(res);
     toast.success("Email Verified");
@@ -100,21 +90,16 @@ if(loading){
     <Container>
        <Title>Verify Email</Title>
       <FormWrapper onSubmit={handleSubmit}>
-        <OtpContainer>
-          {otp.map((data, index) => {
-            return (
+        <OtpContainer>     
               <OtpInput
-                type="text"
+                type="number"
                 name="otp"
                 maxLength="1"
-                key={index}
-                value={data}
+                value={otp}
+                placeholder='Enter otp'
                 required
-                onChange={(e) => handleChange(e.target, index)}
-                onFocus={(e) => e.target.select()}
+                onChange={(e) => setOtp(e.target.value)}
               />
-            );
-          })}
         </OtpContainer>
         <Button type="submit">Verify</Button>
       </FormWrapper>
