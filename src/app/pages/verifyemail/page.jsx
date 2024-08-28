@@ -12,7 +12,9 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #333333;
+  padding: 1rem;
+  box-sizing: border-box;
 `;
 
 const FormWrapper = styled.form`
@@ -24,19 +26,31 @@ const FormWrapper = styled.form`
   max-width: 400px;
   box-sizing: border-box;
   text-align: center;
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+  }
 `;
 
 const Title = styled.h2`
   margin-bottom: 1.5rem;
   color: #333;
   font-size: 1.8rem;
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const OtpContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 480px) {
+    gap: 0.3rem;
+  }
 `;
 
 const OtpInput = styled.input`
@@ -51,6 +65,12 @@ const OtpInput = styled.input`
   &:focus {
     border-color: #005bb5;
     outline: none;
+  }
+
+  @media (max-width: 480px) {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -67,6 +87,11 @@ const Button = styled.button`
 
   &:hover {
     background-color: #004494;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+    font-size: 0.9rem;
   }
 `;
 
