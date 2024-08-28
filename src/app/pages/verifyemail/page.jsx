@@ -81,10 +81,12 @@ const handleSubmit =  (e) => {
   try {
     setLoading(true)
     const res =axios.post(`/api/users/verifyemail`, { otp: otp.join('') });
+    .then(res=>{
     console.log(res);
     toast.success("Email Verified");
     router.push('/pages/login');
     setLoading(false)
+      })
   } catch (err) {
     console.log(err);
     toast.error(err.response.data.message);
@@ -97,8 +99,8 @@ if(loading){
   return (
     <><title>Verify email - Foodify</title>
     <Container>
-      <FormWrapper>
-        <Title>Verify Email</Title>
+       <Title>Verify Email</Title>
+      <FormWrapper onSubmit={handleSubmit}>
         <OtpContainer>
           {otp.map((data, index) => {
             return (
@@ -115,7 +117,7 @@ if(loading){
             );
           })}
         </OtpContainer>
-        <Button type="submit" onClick={handleSubmit}>Verify</Button>
+        <Button type="submit">Verify</Button>
       </FormWrapper>
     </Container>
     </>
