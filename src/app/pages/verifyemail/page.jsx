@@ -78,16 +78,15 @@ const VerifyEmailPage = () => {
 const router = useRouter()
 const handleSubmit =  (e) => {
   e.preventDefault();
-  try {
     setLoading(true)
-    const res =axios.post(`/api/users/verifyemail`, { otp: otp.join('') });
+    axios.post(`/api/users/verifyemail`, { otp: otp.join('') });
     .then(res=>{
     console.log(res);
     toast.success("Email Verified");
     router.push('/pages/login');
     setLoading(false)
       })
-  } catch (err) {
+  . catch (err) {
     console.log(err);
     toast.error(err.response.data.message);
     setLoading(false)
