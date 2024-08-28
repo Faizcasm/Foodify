@@ -76,11 +76,11 @@ const handleSubmit =  (e) => {
     router.push('/pages/login');
     setLoading(false)
   })
-   .catch (err) {
-    console.log(err);
+  .catch(err=>{
+     console.log(err);
     toast.error(err.response.data.message);
     setLoading(false)
-  }
+  })
 };
 if(loading){
   return <Loading/>
